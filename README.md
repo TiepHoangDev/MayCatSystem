@@ -2,6 +2,6 @@
  Giám sát trâng thái máy cắt PN
 
 
-#Home UI
+# Home UI
 
-![home ui](/docs/home ui.jpg?raw=true)
+![home ui](docs/home ui.jpg?raw=true)

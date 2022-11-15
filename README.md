@@ -1,5 +1,5 @@
 # MayCatSystem
- Giám sát trâng thái máy cắt PN
+ Giám sát trạng thái máy cắt PN
 
 
 # Home UI

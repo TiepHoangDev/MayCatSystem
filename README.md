@@ -4,4 +4,4 @@
 
 # Home UI
 
-![home ui](docs/home%20ui.jpg?raw=true)
+![home ui](docs/home ui.jpg?raw=true)

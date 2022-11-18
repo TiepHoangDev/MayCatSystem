@@ -1,0 +1,146 @@
+﻿<div class="wrap">
+    <div class="home">
+        <div class="banner">
+            <img src="assets/images/banner.png" />
+        </div>
+        <div class="contents">
+            <br />
+            <div class="text-center">
+                <h3>MÀN HÌNH GIÁM SÁT TRẠNG THÁI MÁY CẮT PN</h3>
+            </div>
+            <br />
+            <div class="flex thongso-content">
+                <div>
+                    <div class="thongso">
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <td>Điện áp(V)</td>
+                                    <td>6650</td>
+                                </tr>
+                                <tr>
+                                    <td>Dòng điện(A)</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Ia(A)</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Ib(A)</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Ic(A)</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Cos fi</td>
+                                    <td>0,76</td>
+                                </tr>
+                                <tr>
+                                    <td>Trạng thái MC</td>
+                                    <td>Sẵn sàng</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <div>
+                        <h5>Bảng thông số và trạng thái MC</h5>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="camera">
+                            <div class="novideo"><b>NOVIDEO</b></div>
+                        </div>
+                    </div>
+                    <br />
+                    <div>
+                        <h5>Camera giám sát trạng thái đóng cắt</h5>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .content {
+        background: #545454;
+        height: calc(100vh - 56px);
+    }
+
+    .wrap {
+        display: flex;
+        align-content: center;
+        height: 100%;
+    }
+
+
+    .home {
+        font-family: 'Times New Roman';
+        font-style: italic;
+        font-weight: bold;
+        width: 1005px;
+        display: block;
+        margin: auto;
+        font-size: 24px;
+        border: 1px solid black;
+        padding: 2px;
+        background: white;
+    }
+
+
+    .banner img {
+        width: 100%;
+    }
+
+    .flex {
+        display: flex;
+        gap: 5px;
+    }
+
+        .flex > div {
+            flex: 1 1 0px;
+        }
+
+    table {
+        width: 100%;
+        background: #f0f0f0;
+    }
+
+    td {
+        border: 1px solid #9b9af6;
+        width: 50%;
+        padding: 5px;
+    }
+
+    .thongso-content {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .camera {
+        height: 331px;
+        line-height: 331px;
+        width: 100%;
+        background-color: #7a7a7a;
+        user-select: none;
+        cursor: pointer;
+        align-content: center;
+    }
+
+    .novideo {
+        letter-spacing: 17px;
+        color: white;
+    }
+
+</style>
+
+@code {
+
+}

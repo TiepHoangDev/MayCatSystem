@@ -1,0 +1,107 @@
+﻿@page "/login"
+
+<div class="wrap">
+    <div class="login-view">
+
+        <div>
+            <h3>
+                HỆ THỐNG GIÁM SÁT MÁY CẮT
+            </h3>
+        </div>
+
+        <div class="item-input">
+            <div>Tên đăng nhập*</div>
+            <div>
+                <input @bind="Username" placeholder="Tên đăng nhập"></input>
+            </div>
+        </div>
+
+        <div class="item-input">
+            <div>Mật khẩu*</div>
+            <div>
+                <input type="password" @bind="Password" placeholder="Mật khẩu"></input>
+            </div>
+        </div>
+
+        <div class="item-input">
+            @if (!string.IsNullOrEmpty(Message))
+            {
+                <p class="msg">@Message</p>
+            }
+            <button @onclick="onLogin">ĐĂNG NHẬP</button>
+        </div>
+
+
+    </div>
+</div>
+
+<style>
+
+    .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .login-view {
+        padding: 123px;
+        background: white;
+        height: 500px;
+    }
+
+    .item-input {
+        margin: 25px 0px;
+    }
+
+        .item-input button {
+            width: 100%;
+            border: 1px solid #333;
+            user-select: none;
+            padding: 5px;
+            background: #90a3ff;
+        }
+
+        .item-input input {
+            width: 100%;
+            user-select: none;
+        }
+
+    .msg {
+        color: #fd0000;
+        background: #ffff26;
+        padding: 5px;
+        text-align: center;
+    }
+
+</style>
+
+@inject NavigationManager NavigationManager
+@inject AccountService AccountService
+@code {
+    public string Username { get; set; } = "admin";
+    public string Password { get; set; } = "admin";
+    public string Message { get; set; } = "";
+
+    async void onLogin()
+    {
+        try
+        {
+            if (await AccountService.Login(Username, Password))
+            {
+                Message = "Đăng nhập thành công";
+                NavigationManager.NavigateTo("/", true);
+                return;
+            }
+            Message = "Sai tên đăng nhập hoặc mật khẩu";
+        }
+        catch (Exception ex)
+        {
+            Message = ex.Message;
+        }
+
+    }
+
+}

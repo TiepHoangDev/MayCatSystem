@@ -1,0 +1,158 @@
+[
+  {
+    "OrderNo": 1,
+    "LabelText": "Điện áp(V)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.U21",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 2,
+    "LabelText": "Dòng điện(A)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "I1"
+  },
+  {
+    "OrderNo": 3,
+    "LabelText": "Ia(A)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.I1",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 4,
+    "LabelText": "Ib(A)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.I2",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 5,
+    "LabelText": "Ic(A)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.I3",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 6,
+    "LabelText": "Cos fi",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.COSfi",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 7,
+    "LabelText": "Trạng thái MC",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.STATUS",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 8,
+    "LabelText": "Nhiệt độ(*C)",
+    "LinkNode": "ns=2;s=Channel1.BIENTAN.nhiet_do",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  //settings
+  {
+    "OrderNo": 20,
+    "LabelText": "H2 restraint set point",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "20%"
+  },
+  {
+    "OrderNo": 21,
+    "LabelText": "GA_Tripping curve",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "0"
+  },
+  {
+    "OrderNo": 22,
+    "LabelText": "GA_Is set point",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.1A_CURRENT",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 23,
+    "LabelText": "GA_Tripping td",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.1A_TIME",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 24,
+    "LabelText": "GA_Tripping curve",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "0"
+  },
+  {
+    "OrderNo": 25,
+    "LabelText": "GA_Is set point",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.2A_CURRENT",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 26,
+    "LabelText": "GA_Tripping td",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.2A_TIME",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  //settings 2
+  {
+    "OrderNo": 30,
+    "LabelText": "H2 restraint set point",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "20%"
+  },
+  {
+    "OrderNo": 31,
+    "LabelText": "GA_Tripping curve",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "0"
+  },
+  {
+    "OrderNo": 22,
+    "LabelText": "GA_Is set point",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.3A_CURRENT",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 33,
+    "LabelText": "GA_Tripping td",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.3A_TIME",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 34,
+    "LabelText": "GA_Tripping curve",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.ap_suat",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "0"
+  },
+  {
+    "OrderNo": 35,
+    "LabelText": "GA_Is set point",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.4A_CURRENT",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  },
+  {
+    "OrderNo": 36,
+    "LabelText": "GA_Tripping td",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.4A_TIME",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": ""
+  }
+]

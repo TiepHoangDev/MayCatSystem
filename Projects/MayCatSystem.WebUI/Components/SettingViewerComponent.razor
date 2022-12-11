@@ -1,4 +1,19 @@
-﻿<div class="setting-view">
+﻿@inject DataKepserverService _dataKepserver
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _dataKepserver.HaschangeData += async (e, b) => { await InvokeAsync(StateHasChanged); };
+    }
+
+    List<List<DataKepserver>> _settings => new List<List<DataKepserver>>
+    {
+        _dataKepserver.LastDataKepserver.Values.Where(q=>q.OrderNo < 30 && q.OrderNo >= 20).OrderBy(q=>q.OrderNo).ToList(),
+        _dataKepserver.LastDataKepserver.Values.Where(q=>q.OrderNo >= 30).OrderBy(q=>q.OrderNo).ToList()
+    };
+}
+
+<div class="setting-view">
 
     <div class="tieude">
         <h4>MÀN HÌNH CÀI ĐẶT THÔNG SỐ BẢO VỆ 50/51</h4>
@@ -8,40 +23,21 @@
 
         <div class="flex">
 
-            @for (int i = 0; i < 2; i++)
+            @foreach (var setting in _settings)
             {
                 <div>
                     <div>
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>H2 restraint set point</td>
-                                    <td>20%</td>
-                                </tr>
-                                <tr>
-                                    <td>GA_Tripping curve</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>GA_Is set point</td>
-                                    <td>1,26kA</td>
-                                </tr>
-                                <tr>
-                                    <td>GA_Tripping td</td>
-                                    <td>100ms</td>
-                                </tr>
-                                <tr>
-                                    <td>GA_Tripping curve</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>GA_Is set point</td>
-                                    <td>1,26kA</td>
-                                </tr>
-                                <tr>
-                                    <td>GA_Tripping td</td>
-                                    <td>100ms</td>
-                                </tr>
+                                @foreach (var item in setting)
+                                {
+                                    <tr>
+                                        <td>@(item.LabelText ?? "---")</td>
+                                        <td title="@item.LastData?.Time">
+                                            <div class="LastData"> @(item.LastData?.Value ?? item.FixValue ?? "---") </div>
+                                        </td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -52,9 +48,6 @@
             }
 
         </div>
-
-
-
     </div>
 
 </div>
@@ -64,8 +57,3 @@
         text-align: center;
     }
 </style>
-
-
-@code {
-
-}

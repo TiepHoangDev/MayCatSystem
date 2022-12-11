@@ -1,4 +1,15 @@
-﻿<div>
+﻿@inject DataKepserverService _dataKepserver
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _dataKepserver.HaschangeData += async (e, b) => { await InvokeAsync(StateHasChanged); };
+    }
+
+    List<DataKepserver> Data => _dataKepserver.LastDataKepserver.Values.Where(q => q.OrderNo < 20).OrderBy(q => q.OrderNo).ToList();
+}
+
+<div>
 
     <div class="text-center tieude">
         <h4>MÀN HÌNH GIÁM SÁT TRẠNG THÁI MÁY CẮT PN</h4>
@@ -9,38 +20,26 @@
             <div class="thongso">
                 <table border="1">
                     <tbody>
-                        <tr>
-                            <td>Điện áp(V)</td>
-                            <td>6650</td>
-                        </tr>
-                        <tr>
-                            <td>Dòng điện(A)</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Ia(A)</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Ib(A)</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Ic(A)</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Cos fi</td>
-                            <td>0,76</td>
-                        </tr>
-                        <tr>
-                            <td>Trạng thái MC</td>
-                            <td>Sẵn sàng</td>
-                        </tr>
-                        <tr>
-                            <td>Nhiệt độ(*C)</td>
-                            <td>30</td>
-                        </tr>
+                        @if (_dataKepserver.LastDataKepserver.Any())
+                        {
+                            @foreach (var item in Data)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="LabelText">@(item.LabelText ?? "---")</div>
+                                    </td>
+                                    <td title="@item.LastData?.Time">
+                                        <div class="LastData">@(item.LastData?.Value ?? item.FixValue ?? "---")</div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="2">CHƯA CONFIG FILE CẤU HÌNH KEPSERVER </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -70,6 +69,11 @@
         font-weight: bold;
     }
 
+    .LastData {
+        width: 115px;
+        margin: auto;
+    }
+
     .camera {
         height: 342px;
         line-height: 331px;
@@ -88,6 +92,3 @@
 </style>
 
 
-@code {
-
-}

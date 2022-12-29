@@ -5,7 +5,7 @@
         </div>
         <div class="contents">
             <br />
-            <div class="flex ">
+            <div class="flex content-view">
                 <DataViewerComponent></DataViewerComponent>
                 <SettingViewerComponent></SettingViewerComponent>
             </div>
@@ -61,11 +61,12 @@
 
     h4 {
         font-weight: bold;
+        font-size: 22px;
     }
 
     table {
         width: 100%;
-        height: 342px;
+        height: 433px;
         background: #f0f0f0;
     }
 
@@ -75,6 +76,28 @@
         font-size: 21px;
     }
 
+</style>
+
+<style>
+    .dataviewer {
+        flex: 17 1 0px !important;
+    }
+
+    .setting-view {
+        flex: 10 1 0px !important;
+    }
+</style>
+
+<style>
+    @@media only screen and (max-width: 600px) {
+        .thongso-content, .content-view {
+            flex-direction: column;
+        }
+
+        .banner img {
+            height: auto;
+        }
+    }
 </style>
 
 @code {

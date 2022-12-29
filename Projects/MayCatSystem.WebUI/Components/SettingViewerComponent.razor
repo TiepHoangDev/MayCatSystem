@@ -8,15 +8,14 @@
 
     List<List<DataKepserver>> _settings => new List<List<DataKepserver>>
     {
-        _dataKepserver.LastDataKepserver.Values.Where(q=>q.OrderNo < 30 && q.OrderNo >= 20).OrderBy(q=>q.OrderNo).ToList(),
-        _dataKepserver.LastDataKepserver.Values.Where(q=>q.OrderNo >= 30).OrderBy(q=>q.OrderNo).ToList()
+        _dataKepserver.LastDataKepserver.Values.Where(q=>q.OrderNo > 30).OrderBy(q=>q.OrderNo).ToList()
     };
 }
 
 <div class="setting-view">
 
     <div class="tieude">
-        <h4>MÀN HÌNH CÀI ĐẶT THÔNG SỐ BẢO VỆ 50/51</h4>
+        <h4>MÀN HÌNH CÀI ĐẶT THÔNG SỐ BẢO VỆ 50/51A</h4>
     </div>
 
     <div class="settings">
@@ -34,7 +33,7 @@
                                     <tr>
                                         <td>@(item.LabelText ?? "---")</td>
                                         <td title="@item.LastData?.Time">
-                                            <div class="LastData"> @(item.LastData?.Value ?? item.FixValue ?? "---") </div>
+                                            <div class="LastData"> @((item.LastData?.Value as double?)?.ToString("#,##0.00") ?? item.FixValue ?? "---") </div>
                                         </td>
                                     </tr>
                                 }
@@ -42,7 +41,7 @@
                         </table>
                     </div>
                     <div class="tieude">
-                        <p>Thông số bảo vệ 50/51</p>
+                        <p>Thông số bảo vệ 50/51A</p>
                     </div>
                 </div>
             }

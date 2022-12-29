@@ -4,153 +4,142 @@
     "LabelText": "Điện áp(V)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.U21",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "6210"
   },
   {
     "OrderNo": 2,
     "LabelText": "Dòng điện(A)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.I1",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "57.04"
   },
   {
     "OrderNo": 3,
     "LabelText": "Ia(A)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.I1",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "57.45"
   },
   {
     "OrderNo": 4,
     "LabelText": "Ib(A)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.I2",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "57.55"
   },
   {
     "OrderNo": 5,
     "LabelText": "Ic(A)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.I3",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "58.40"
   },
   {
     "OrderNo": 6,
     "LabelText": "Cos fi",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.COSfi",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "0.63"
   },
   {
     "OrderNo": 7,
-    "LabelText": "Trạng thái MC",
-    "LinkNode": "ns=2;s=Channel1.MAYCAT.STATUS",
+    "LabelText": "P(kW)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.PkW",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "379.1"
   },
   {
     "OrderNo": 8,
-    "LabelText": "Nhiệt độ(*C)",
-    "LinkNode": "ns=2;s=Channel1.BIENTAN.nhiet_do",
+    "LabelText": "f(Hz)",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.fHz",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "50"
   },
   {
-    "OrderNo": 20,
-    "LabelText": "H2 restraint set point",
-    "LinkNode": "H2 restraint set point 1",
+    "OrderNo": 9,
+    "LabelText": "Trạng thái MC",
+    "LinkNode": "ns=2;s=Channel1.MAYCAT.STATUS",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": "20%"
+    "FixValue": "Đang đóng"
   },
+  {
+    "OrderNo": 10,
+    "LabelText": "Tay dao",
+    "LinkNode": "ns=2;s=Channel1.BIENTAN.taydao",
+    "LinkServer": "opc.tcp://localhost:49320",
+    "FixValue": "Đóng"
+  },
+
   {
     "OrderNo": 21,
-    "LabelText": "GA_Tripping curve",
+    "LabelText": "G1A Tripping curve",
     "LinkNode": "GA_Tripping curve 1",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": "0"
+    "FixValue": "50"
   },
   {
     "OrderNo": 22,
-    "LabelText": "GA_Is set point",
+    "LabelText": "G1A Is set point",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.1A_CURRENT",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "50"
   },
   {
     "OrderNo": 23,
-    "LabelText": "GA_Tripping td",
+    "LabelText": "G1A Tripping td",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.1A_TIME",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "50"
   },
   {
     "OrderNo": 24,
-    "LabelText": "GA_Tripping curve",
+    "LabelText": "G2A Tripping curve",
     "LinkNode": "GA_Tripping curve 2",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": "0"
+    "FixValue": "50"
   },
   {
     "OrderNo": 25,
-    "LabelText": "GA_Is set point",
+    "LabelText": "G2A Is set point",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.2A_CURRENT",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "50"
   },
   {
     "OrderNo": 26,
-    "LabelText": "GA_Tripping td",
+    "LabelText": "G2A Tripping td",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.2A_TIME",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "50"
   },
-  {
-    "OrderNo": 30,
-    "LabelText": "H2 restraint set point",
-    "LinkNode": "H2 restraint set point 2",
-    "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": "20%"
-  },
-  {
-    "OrderNo": 31,
-    "LabelText": "GA_Tripping curve",
-    "LinkNode": "GA_Tripping curve 3",
-    "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": "0"
-  },
+  
   {
     "OrderNo": 32,
-    "LabelText": "GA_Is set point",
+    "LabelText": "G1A Is set point (A)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.3A_CURRENT",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "400"
   },
   {
     "OrderNo": 33,
-    "LabelText": "GA_Tripping td",
+    "LabelText": "G1A Tripping td (ms)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.3A_TIME",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "100"
   },
-  {
-    "OrderNo": 34,
-    "LabelText": "GA_Tripping curve",
-    "LinkNode": "GA_Tripping curve 4",
-    "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": "0"
-  },
+
   {
     "OrderNo": 35,
-    "LabelText": "GA_Is set point",
+    "LabelText": "G2A Is set point (A)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.4A_CURRENT",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "1200"
   },
   {
     "OrderNo": 36,
-    "LabelText": "GA_Tripping td",
+    "LabelText": "G2A Tripping td (ms)",
     "LinkNode": "ns=2;s=Channel1.MAYCAT.4A_TIME",
     "LinkServer": "opc.tcp://localhost:49320",
-    "FixValue": ""
+    "FixValue": "0"
   }
 ]

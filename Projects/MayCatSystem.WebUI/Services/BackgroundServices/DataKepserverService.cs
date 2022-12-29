@@ -1,4 +1,6 @@
-﻿using OpcHelper;
+﻿#define TEST
+
+using OpcHelper;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Text.Json;
@@ -75,16 +77,57 @@ namespace MayCatSystem.WebUI.Services.BackgroundServices
                                     FixValue = item.FixValue,
                                     LabelText = item.LabelText,
                                     OrderNo = item.OrderNo,
-                                    LastData = client.ReadNode<object>(item.LinkServer, item.LinkNode),
+#if TEST
+                                    LastData = new KepserverEx6Result<object>
+                                    {
+                                        IsSuccess = true,
+                                        Status = StatusInfoKepex.Normal,
+                                        Time = DateTime.Now,
+                                        Value = double.TryParse(item.FixValue, out double f) ? f : null
+                                    },
+#else
+                                    LastData = string.IsNullOrWhiteSpace(item.FixValue) ? client.ReadNode<object>(item.LinkServer, item.LinkNode) : null,
+#endif
                                 });
                             }
                         }
                         return true;
                     });
 
-                    var channelKep = configs?.Where(q => string.IsNullOrWhiteSpace(q.FixValue)).ToList();
+                    var channelKep = configs?.Where(q => q.OrderNo < 20
+                    && double.TryParse(q.FixValue, out double d)
+                    && d > 40
+                    && d != 50).ToList();
                     if (channelKep?.Any() == true)
                     {
+#if TEST
+                        //#elif cannhayso
+                        var random = new Random();
+                        while (!stoppingToken.IsCancellationRequested)
+                        {
+                            UpdateLastData(() =>
+                            {
+                                foreach (var item in channelKep)
+                                {
+                                    var key = GetKeyConfig(item);
+                                    if (LastDataKepserver.ContainsKey(key))
+                                    {
+                                        var lastData = LastDataKepserver[key];
+                                        lastData.LastData = new KepserverEx6Result<object>
+                                        {
+                                            IsSuccess = true,
+                                            Status = StatusInfoKepex.Normal,
+                                            Time = DateTime.Now,
+                                            Value = Math.Floor(Convert.ToDouble(lastData.LastData?.Value)) + random.Next(0, 99) / 100D
+                                        };
+                                        Debug.WriteLine($"Set new value {lastData}");
+                                    }
+                                }
+                                return true;
+                            });
+                            await Task.Delay(5000, stoppingToken);
+                        }
+#else
                         var client = new KepserverEx6Client();
                         foreach (var item in channelKep)
                         {
@@ -111,8 +154,9 @@ namespace MayCatSystem.WebUI.Services.BackgroundServices
                                 Debug.WriteLine($"SubscribeChanges {item} error {ex}");
                             }
                         }
-                        var timeReset = TimeSpan.FromDays(1);
+                        var timeReset = TimeSpan.FromHours(1);
                         await Task.Delay(timeReset, stoppingToken);
+#endif
                     }
 
                     if (configs?.Any() != true)

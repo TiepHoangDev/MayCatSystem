@@ -9,7 +9,7 @@
     List<DataKepserver> Data => _dataKepserver.LastDataKepserver.Values.Where(q => q.OrderNo < 20).OrderBy(q => q.OrderNo).ToList();
 }
 
-<div>
+<div class="dataviewer">
 
     <div class="text-center tieude">
         <h4>MÀN HÌNH GIÁM SÁT TRẠNG THÁI MÁY CẮT PN</h4>
@@ -29,7 +29,7 @@
                                         <div class="LabelText">@(item.LabelText ?? "---")</div>
                                     </td>
                                     <td title="@item.LastData?.Time">
-                                        <div class="LastData">@(item.LastData?.Value ?? item.FixValue ?? "---")</div>
+                                        <div class="LastData">@((item.LastData?.Value as double?)?.ToString("#,##0.00") ?? item.FixValue ?? "---")</div>
                                     </td>
                                 </tr>
                             }
@@ -75,8 +75,8 @@
     }
 
     .camera {
-        height: 342px;
-        line-height: 331px;
+        height: 433px;
+        line-height: 433px;
         width: 100%;
         background-color: #7a7a7a;
         user-select: none;
